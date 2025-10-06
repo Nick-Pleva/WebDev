@@ -1,0 +1,72 @@
+body {
+    background-color: bisque;
+}
+header {
+    background-color:rgb(238, 180, 109);
+    padding: 5px;
+    text-align: center;
+}
+footer {
+    background-color:rgb(238, 180, 109);
+    padding: 5px;
+    text-align: center;
+    color: rgb(47, 88, 22);
+    font-family: cursive;
+    font-weight: bold;
+}
+h1 {
+  color: rgb(47, 88, 22);
+  font-size: 40px;
+  font-weight: bold;
+  font-family: cursive;
+}
+h2 {
+  color: rgb(47, 88, 22); 
+  text-align: center;        
+  font-size: 24px;      
+  font-weight: bold;    
+}
+table {
+    background-color: lightgrey;
+    border: 1;
+    padding: 8;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+table td, table th {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #000000;
+  max-width: 65ch;
+  text-align: center;
+  font-family: cursive;
+}
+p:not(footer p) {
+    text-align: center;
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(253, 210, 154);
+    color: navy;
+}
+ul {
+    list-style: none;
+    padding: 10;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 25ch;
+    font-family: cursive;
+    text-align: justify;
+    color: navy;
+}
+ul li::before {
+    content: "➤ ";
+    margin-left: auto;
+    margin-right: auto;
+    color: navy;
+    margin-right: 8px;
+}

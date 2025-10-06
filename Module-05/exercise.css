@@ -1,0 +1,85 @@
+.flexbox1
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+        flex-direction: row;
+    }
+    #box1{        
+        flex: 30;
+        background-color: rgba(0, 0, 255, 0.534);           
+    }
+    #box2{        
+        flex: 45;
+        background-color: rgba(22, 85, 6, 0.534);        
+    }
+    #box3{        
+        flex: 15;
+        background-color: rgba(233, 71, 12, 0.534);        
+    }
+
+.flexbox2
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+        flex-direction: column;
+    }
+    #box4{        
+        width: 200px;
+        background-color: rgba(255, 149, 0, 0.534);           
+    }
+    #box5{        
+        width: 200px;
+        background-color: rgba(38, 192, 231, 0.534);        
+    }
+    #box6{        
+        width: 200px;
+        background-color: rgba(238, 68, 195, 0.534);        
+    }
+
+.flexbox3
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+        flex-direction: row;
+    }
+    @media (max-width: 600px) {
+        .flexbox3{
+             flex-direction: column;
+             flex: 0 0 100%;
+        }
+        .flexbox3 > div {
+            width: 100%;
+            /* Optional for padding or spacing */
+            box-sizing: border-box;
+        }
+    }
+    #box7{        
+        flex: 50;
+        background-color: rgba(6, 166, 123, 0.534);           
+    }
+    #box8{        
+        flex: 50;
+        background-color: rgba(156, 46, 235, 0.534);        
+    }
+    #box9{        
+        flex: 50;
+        background-color: rgba(233, 12, 12, 0.534);        
+    }
+    #box10{
+        flex: 50;
+        background-color: rgb(126, 111, 92);
+    }
+
+.box-common
+    {
+        color: aliceblue;
+        text-align: center;    
+        border: 5px solid whitesmoke;    
+    }
+h3
+    {
+        text-align: center;
+    }
