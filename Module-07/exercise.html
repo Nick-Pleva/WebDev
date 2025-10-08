@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise with loops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container1 {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .container2 {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .container3 {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .container4 {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .container5 {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="string"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #numGuess {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f5e6;
+            border: 1px solid #d4e7d3;
+            border-radius: 4px;
+            color: #2f6627;
+            font-size: 18px;
+            text-align: center;
+        }
+        #calcDiscount {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f5e6;
+            border: 1px solid #d4e7d3;
+            border-radius: 4px;
+            color: #2f6627;
+            font-size: 18px;
+            text-align: center;
+        }
+        #makeTable {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f5e6;
+            border: 1px solid #d4e7d3;
+            border-radius: 4px;
+            color: #2f6627;
+            font-size: 18px;
+            text-align: center;
+        }
+        #makeArray {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f5e6;
+            border: 1px solid #d4e7d3;
+            border-radius: 4px;
+            color: #2f6627;
+            font-size: 18px;
+            text-align: center;
+        }
+        #checkPass {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f5e6;
+            border: 1px solid #d4e7d3;
+            border-radius: 4px;
+            color: #2f6627;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--Activity 1-->
+    <div class="container1">
+        <h1>Guess the Number</h1>
+        <p>A number from 1 to 10 has been choosen. Guess the number!</p>
+        <input type="number" id="numInput1" placeholder="Enter your guess">
+        <button onclick="showGuess()">Enter Guess</button>
+        <div id="numGuess"></div>
+    </div>
+    <script>
+        randomNum = Math.floor(Math.random() * 10);
+        console.log(randomNum)
+        function showGuess() {
+            const guessNum = document.getElementById('numInput1').value;
+            
+            console.log(guessNum)
+            let m1 = "Incorrect"
+            if (guessNum == randomNum) {
+                m1 = "Correct! You guessed it!"
+            } else if (guessNum === "") {
+                m1 = "Error"
+            } else if (guessNum > randomNum) {
+                m1 = "Too high! Try again."
+            } else if (guessNum < randomNum) {
+                m1 = "Too low! Try again."
+            }
+                
+
+            const numGuess = document.querySelector('#numGuess');
+            numGuess.innerHTML = m1
+        }
+    </script>
+
+    <!--Activity 2-->
+    <div class="container2">
+        <h1>Shopping Cart Discount</h1>
+        <p>Based on the value of your shopping cart, you might get a discount!</p>
+        <input type="number" id="numInput2" placeholder="Enter your cart value">
+        <button onclick="showDiscount()">Show Discount</button>
+        <div id="calcDiscount"></div>
+    </div>
+    <script>
+        function showDiscount() {
+            let cartValue = document.getElementById('numInput2').value;
+            console.log(cartValue)
+            if (cartValue === "") {
+                m2 = "Error"
+            } else if (cartValue >= 100 && cartValue >= 50) {
+                cartValue = (cartValue*0.9).toFixed(2)
+                console.log(cartValue)
+                m2 = "You spent over $100. You gained a 10% discount! Your new total is $" + cartValue + "!"
+            } else if (cartValue >= 50) {
+                cartValue = (cartValue*0.95).toFixed(2)
+                console.log(cartValue)
+                m2 = "You spent over $50. You gained a 5% discount! Your new total is $" + cartValue + "!"
+            } else {
+                m2 = "No discount added. Your total is $" + cartValue + "!"
+            }
+
+            const calcDiscount = document.querySelector('#calcDiscount');
+            calcDiscount.innerHTML = m2
+        }
+    </script>
+
+    <!--Activity 3-->
+    <div class="container3">
+        <h1>Multiplication Table</h1>
+        <p>Enter a number and see its multiplication table!</p>
+        <input type="number" id="numInput3" placeholder="Enter your number">
+        <button onclick="showMult()">Show Table</button>
+        <div id="makeTable"></div>
+    </div>
+    <script>
+        function showMult() {
+            let value = document.getElementById('numInput3').value;
+            console.log(value)
+            
+            let table = "Multiplication Table<br>"
+            for (let i = 1; i <= 10; i++) {
+                let product = value * i
+                table = table + value + " x " + i + " = " + product + "<br>"
+            }
+
+            const makeTable = document.querySelector('#makeTable');
+            makeTable.innerHTML = table
+        }
+    </script>
+
+    <!--Activity 4-->
+    <div class="container4">
+        <h1>Even and Odd Numbers</h1>
+        <p>Here is 10 random numbers, and if they are even or odd!</p>
+        <button onclick="makeArray()">Show Values</button>
+        <div id="makeArray"></div>
+    </div>
+    <script>
+        function makeArray() {
+            let randomNumbers = []
+            console.log("Num")
+            for (let i = 0; i < 10; i++) {
+                let num = Math.floor(Math.random() * 100) + 1
+                randomNumbers.push(num)
+                console.log(num)
+            }
+            
+            outs = "Even or Odd<br>"
+            let i = 0
+            while (i < randomNumbers.length) {
+                if (randomNumbers[i]%2 == 0) {
+                    outs = outs + randomNumbers[i] + " is even<br>"
+                } else {
+                    outs = outs + randomNumbers[i] + " is odd<br>"
+                }
+                i += 1
+            }
+
+            const makeArray = document.querySelector('#makeArray');
+            makeArray.innerHTML = outs
+        }
+    </script>
+    
+    <!--Activity 5-->
+    <div class="container5">
+        <h1>Password Checker</h1>
+        <p>Enter the correct password to sign in!</p>
+        <button onclick="checkPass()">Click to get Password prompt</button>
+        <div id="checkPass"></div>
+    </div>
+    <script>
+        function checkPass() {
+            const correctPass = "12345"
+            let passGuess = prompt("Enter Password: ");
+            if (passGuess === null) {
+                return;
+            }
+            if (passGuess != correctPass) {
+                do {
+                    passGuess = prompt("Incorrect Password. Try Again:");
+                    if (passGuess === null) {
+                        return;
+                    }
+                } while (passGuess != correctPass)
+            }
+            let m5 = "Access Granted!"
+            const checkPass = document.querySelector('#checkPass');
+            checkPass.innerHTML = m5
+        }
+    </script>
+</body>
+</html>
