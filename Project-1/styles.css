@@ -21,7 +21,7 @@ body {
 .title_box {
     display: flex;
     background-color: rgba(22, 22, 22, 0.8);
-    width: 15%;
+    width: 150px;
     margin: 0 auto;
     justify-content: center;
     padding: 5px;
@@ -55,20 +55,20 @@ body {
 
 /* About Me */
 .about-me {
-    flex: 32%;
+    flex: 20%;
     background-color: rgb(243, 243, 243);
     padding: 40px;
     font-family: "Courier New", monospace;
-    border: 10px solid #aaa;
+    border: 10px solid #b2b6d3;
 }
 
 /* Current Projects */
 .side {
-    flex: 62%;
+    flex: 40%;
     background-color: white;
     padding: 40px;
     font-family: "Courier New", monospace;
-    border: 10px solid #aaa;
+    border: 10px solid #b2b6d3;
 }
 
 .resume {
@@ -76,11 +76,11 @@ body {
     background-color: white;
     padding: 40px;
     font-family: "Courier New", monospace;
-    border: 10px solid #aaa;
+    border: 10px solid #b2b6d3;
 }
 
 .resume-box {
-    background-color: #aaa;
+    background-color: #b0b6ec;
     width: 100%;
     padding: 20px;
     display: flex;
@@ -93,11 +93,11 @@ body {
 
 .divider-horizontal {
     display: flex;
-    background-color: #aaa;
+    background-color: #b2b6d3;
 }
 
 .edu {
-    background-color: #aaa;
+    background-color: #b0b6ec;
     width: 100%;
     padding: 5px;
     display: flex;
@@ -112,6 +112,7 @@ td {
     text-align: center;
     padding-right: 20px;
     padding-left: 20px;
+    border: 1px solid black;
 }
 
 .multi-column-list {
@@ -122,7 +123,7 @@ td {
 }
 
 .img {
-    background-color: #aaa;
+    background-color: #b0b6ec;
     width: 100%;
     padding: 20px;
     text-align: center;
@@ -130,15 +131,15 @@ td {
 }
 
 .img-me {
-    background-color: #aaa;
+    background-color: #b0b6ec;
     width: 100%;
     padding: 20px;
     text-align: center;
-    overflow: hidden;
+    border: 2px solid rgb(130, 130, 130);
 }
 
 .img-wiz {
-    background-color: #aaa;
+    background-color: #b0b6ec;
     width: 100%;
     padding: 20px;
     padding-right: 30px;
@@ -150,13 +151,13 @@ td {
 .footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;
+    background: #b2b6d3;
     width: 100%;
     font-family: "Courier New", monospace;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 /* @media  */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 300px) {
   .row {flex-direction: column; align-items: center;}
 }
