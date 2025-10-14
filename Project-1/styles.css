@@ -80,7 +80,7 @@ body {
 }
 
 .resume-box {
-    background-color: #b0b6ec;
+    background-color: #b2b6d3;
     width: 100%;
     padding: 20px;
     display: flex;
@@ -97,7 +97,7 @@ body {
 }
 
 .edu {
-    background-color: #b0b6ec;
+    background-color: #b2b6d3;
     width: 100%;
     padding: 5px;
     display: flex;
@@ -123,7 +123,7 @@ td {
 }
 
 .img {
-    background-color: #b0b6ec;
+    background-color: #b2b6d3;
     width: 100%;
     padding: 20px;
     text-align: center;
@@ -131,7 +131,7 @@ td {
 }
 
 .img-me {
-    background-color: #b0b6ec;
+    background-color: #b2b6d3;
     width: 100%;
     padding: 20px;
     text-align: center;
@@ -139,7 +139,7 @@ td {
 }
 
 .img-wiz {
-    background-color: #b0b6ec;
+    background-color: #b2b6d3;
     width: 100%;
     padding: 20px;
     padding-right: 30px;
@@ -149,7 +149,7 @@ td {
 
 /* Footer */
 .footer {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     background: #b2b6d3;
     width: 100%;
