@@ -4,7 +4,7 @@
 
 /* Style the body */
 body {
-    font-family: Arial;
+    font-family: "Courier New", monospace;
     margin: 0;
 }
 
@@ -53,6 +53,12 @@ body {
     flex-wrap: wrap;
 }
 
+/* Column container */
+.hrow {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 /* About Me */
 .about-me {
     flex: 20%;
@@ -94,6 +100,29 @@ body {
 .divider-horizontal {
     display: flex;
     background-color: #b2b6d3;
+}
+
+.hobby {
+    background-color: #b2b6d3;
+    width: 33%;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid rgb(130, 130, 130);
+}
+
+.hobby-mid {
+    background-color: #b2b6d3;
+    width: 34%;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid rgb(130, 130, 130);
+}
+
+.img-hobby {
+    width: auto; 
+    max-width: 450px; 
+    border: 2px solid black;
+    text-align: center;
 }
 
 .edu {
@@ -158,6 +187,11 @@ td {
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 /* @media  */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 1500px) {
+  .hrow {flex-direction: column; align-items: center;}
+  .hobby, .hobby-mid {width: 100%;}
+}
+@media screen and (max-width: 500px) {
   .row {flex-direction: column; align-items: center;}
+  .img-hobby {width: 250px;}
 }
