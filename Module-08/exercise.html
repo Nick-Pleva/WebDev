@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript In-Class Activities</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+        .bold { font-weight: bold; }
+        .italic { font-style: italic; }
+        .highlight { color: red; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript In-Class Activities</h1>
+
+    <!-- Activity 1: Adding Two Numbers -->
+    <h3>Activity 1: Adding Two Numbers</h3>
+    <p>Write a function <code>addNumbers</code> that takes two numbers and returns their sum.</p>
+
+    <script>
+        function addNumbers(a, b) {
+            // TODO: Return the sum of a and b
+            return (a + b);
+        }
+
+        function displaySum() {
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            document.getElementById("sumOutput").innerText = addNumbers(num1, num2);
+        }
+    </script>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="displaySum()">Calculate Sum</button>
+    <p>Result: <span id="sumOutput"></span></p>
+    <hr>
+
+    <!-- Activity 2: Checking Even or Odd -->
+    <h3>Activity 2: Check Even or Odd</h3>
+    <p>Write a function <code>isEven</code> that returns "Even" if a number is even, and "Odd" if it's odd.</p>
+
+    <script>
+        // Modulo % Operator: https://www.freecodecamp.org/news/javascript-modulo-operator-how-to-use-the-modulus-in-js/
+        function isEven(num) {
+            // TODO: Return "Even" if num is even, otherwise return "Odd"
+            if (num%2 == 0) {
+                return ("Even");
+            } else {
+                return ("Odd");
+            }
+        }
+
+        function displayEvenOdd() {
+            let input = Number(document.getElementById("evenOddInput").value);
+            document.getElementById("evenOddOutput").innerText = isEven(input);
+        }
+    </script>
+
+    <input type="number" id="evenOddInput" placeholder="Enter a number">
+    <button onclick="displayEvenOdd()">Check</button>
+    <p>Result: <span id="evenOddOutput"></span></p>
+    <hr>
+
+    <!-- Activity 3: Find Minimum in an Array -->
+    <h3>Activity 3: Find Minimum Number in an Array</h3>
+    <p>Write a function <code>findMinimum</code> that finds the smallest number in an array.</p>
+
+    <script>
+        function findMinimum(arr) {
+            // TODO: Loop through the array and return the smallest number
+            let i = 1;
+            let min = arr[0];
+            while (i <= arr.length) {
+                console.log(arr[i]);
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+                i = i + 1;
+            }
+            return (min);
+        }
+
+        function displayMinimum() {
+            let input = document.getElementById("arrayInput").value;
+            let numberArray = input.split(",").map(Number);
+            document.getElementById("arrayOutput").innerText = findMinimum(numberArray);
+        }
+    </script>
+
+    <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+    <button onclick="displayMinimum()">Find Minimum</button>
+    <p>Result: <span id="arrayOutput"></span></p>
+    <hr>
+	
+	<!-- Activity 4: JavaScript Car Object Exercise -->
+    <h3>Activity 4: JavaScript Car Object Exercise</h3>	
+    
+    <p>Modify the car object and display the updated information.</p>
+
+    <script>
+        // Preset car object
+        const car = {
+            brand: "Toyota",
+            model: "Corolla",
+            year: 2018,
+            color: "white"
+        };
+
+        function updateCar() {
+            // TODO: Modify the object properties
+            // Change brand Tesla
+            car.brand = "Tesla";
+            // Change model Model Y
+            car.model = "Y";
+            // Change year 2021
+            car.year = 2021;
+            // Change color red
+            car.color = "red";
+
+            // Display updated car details
+            document.getElementById("carInfo").innerHTML = 
+                `The car is a <span class="bold">${car.brand} ${car.model}</span>, 
+                manufactured in <span class="italic">${car.year}</span>, 
+                and its color is <span class="highlight">${car.color}</span>.`;
+        }
+    </script>
+
+    <button onclick="updateCar()">Update Car</button>
+    <p id="carInfo"></p>
+
+</body>
+</html>
