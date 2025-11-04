@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--Activity 1: Button Click-->
+    <button id="myBtn">Click me</button>
+    <p id="output">Original text</p>
+
+    <script>
+    function changeText() {
+        // TODO: Get the paragraph by its id
+        var p = document.getElementById("output");
+    
+        // TODO: Use .textContent to change its text
+        p.textContent = "Button was clicked!";    
+    }
+
+    var btn = document.getElementById("myBtn");
+    btn.addEventListener("click", changeText);
+    </script>
+
+<!--Activity 2: Key Press Alert-->
+    <input type="text" id="keyInput" placeholder="Type something">
+    <script>
+    function showKey(event) {
+        // TODO: Use alert() to display the key pressed
+        alert("Key pressed -> " + event.key);
+    }
+
+    var input = document.getElementById("keyInput");
+    input.addEventListener("keydown", showKey);
+    </script>
+
+<!--Activity 3: Prevent Default-->
+    <a href="https://example.com" id="noGo">Don't go there!</a>
+
+    <script>
+    function stopLink(event) {
+        // TODO: Prevent the default behavior of the link
+        event.preventDefault();
+        // TODO: Show alert "Stay here!"
+        alert("Stay here!");
+    }
+
+    var link = document.getElementById("noGo");
+    link.addEventListener("click", stopLink);
+    </script>
+
+<!--Activity 4: Event Propagation (Bubbling)-->
+    <div id="outer" style="padding: 20px; background: lightblue;">
+    Outer Div
+    <div id="inner" style="padding: 20px; background: lightcoral;">
+        Inner Div
+    </div>
+    </div>
+
+    <script>
+    function outerClick() {
+        // TODO: Alert "Outer clicked!"
+        alert("Outer clicked!");
+    }
+
+    function innerClick(event) {
+        // TODO: Alert "Inner clicked!"
+        alert("Inner clicked!");
+        // BONUS: Try event.stopPropagation();
+        event.stopPropagation();
+    }
+
+    var outer = document.getElementById("outer");
+    var inner = document.getElementById("inner");
+
+    outer.addEventListener("click", outerClick);
+    inner.addEventListener("click", innerClick);
+    </script>
+
+    <!--Activity 5: Toggle Class on Click-->
+    <style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+    .highlight {
+        background-color: gold;
+    }
+    </style>
+
+    <div class="box" id="toggleBox"></div>
+
+    <script>
+    function toggleHighlight() {
+        // TODO: Use classList.toggle to apply/remove the highlight class
+        var box = document.getElementById("toggleBox");
+        box.classList.toggle("highlight");
+    }
+
+    var box = document.getElementById("toggleBox");
+    box.addEventListener("click", toggleHighlight);
+    </script>
+</body>
+</html>
