@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!--1: Label Me Properly-->
+    <form>
+        <!-- TODO: Add proper label and input connection -->
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" />
+
+        <button type="submit">Submit</button>
+    </form><br>
+
+<!--2: Required Inputs-->
+    <form>
+        <!-- TODO: Add required attributes where needed -->
+        <input type="text" placeholder="Username" required/>
+        <input type="email" placeholder="Email" required/>
+        <input type="password" placeholder="Optional Password" />
+
+        <button type="submit">Submit</button>
+    </form><br>
+    
+<!--3: Dropdown-->
+    <form>
+        <!-- TODO: Create a dropdown for flavor selection -->
+        <label for="flavor">Choose a flavor:</label>
+        <select id="flavor">
+            <!-- Add options here -->
+             <option value="" selectedS>--Please choose an option--</option>
+             <option value="ChCh">Chocolate Cherry</option>
+             <option value="PiFo">Phish Food</option>
+             <option value="MooTr">Moose Tracks</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form><br>
+    
+<!--4: Radio Buttons-->
+    <form>
+        <!-- TODO: Add two radio buttons under the same name -->
+        <p>Choose a container:</p>
+        <!-- Add radio inputs here -->
+        <input type="radio" id="Cup" name="container" value="Cup" />
+        <label for="Cup">Cup</label>
+
+        <input type="radio" id="Cone" name="container" value="Cone" />
+        <label for="Cone">Cone</label>
+
+        <button type="submit">Submit</button>
+    </form><br>
+    
+<!--5: Checkboxes-->
+    <form>
+        <!-- TODO: Add checkboxes for multiple toppings -->
+        <p>Select your toppings:</p>
+        <!-- Add checkbox inputs here -->
+        <input type="checkbox" id="Sprinkles" name="toppings" value="Sprinkles" />
+        <label for="Sprinkles">Sprinkles</label><br>
+
+        <input type="checkbox" id="Caramel" name="toppings" value="Caramel" />
+        <label for="Caramel">Caramel</label><br>
+
+        <input type="checkbox" id="Chocolate Chips" name="toppings" value="Chocolate Chips" />
+        <label for="Chocolate Chips">Chocolate Chips</label><br>
+
+        <button type="submit">Submit</button>
+    </form><br>
+    
+<!--6: Display Input-->
+    <form>
+        <label for="nameInput">Your Name:</label>
+        <input type="text" id="nameInput" />
+
+        <p>Hello, <span id="previewName">friend</span>!</p>
+
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        // TODO: Update #previewName as the user types
+        const nameInput = document.getElementById('nameInput');
+        const previewName = document.getElementById('previewName');
+
+        nameInput.oninput = function () {
+            previewName.textContent = nameInput.value.trim() || 'friend';
+        };
+    </script><br>
+    
+<!--7-->
+    <form>
+        <!-- TODO: Add a pattern and title to restrict input -->
+        <label for="username">Username:</label>
+        <input 
+            type="text" 
+            id="username" 
+            pattern="[A-Za-z]{5,}" 
+            title="Username must be at least 5 letters and contain only A–Z" 
+            required
+        />
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
