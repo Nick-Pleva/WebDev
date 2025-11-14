@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation</title>
+</head>
+<body>
+    <h1>🍦Order Confirmation🍦</h1>
+
+    <p><strong>Name:</strong> <span id="showName"></span></p>
+    <p><strong>Flavor:</strong> <span id="showFlavor"></span></p>
+    <p><strong>Container:</strong> <span id="showContainer"></span></p>
+    <p><strong>Toppings:</strong> <span id="showToppings"></span></p>
+    <p><strong>Special Instructions:</strong> <span id="showSpecial"></span></p>
+
+    <script>
+        // Get items from localStorage
+        document.getElementById("showName").textContent = localStorage.getItem("orderName");
+        document.getElementById("showFlavor").textContent = localStorage.getItem("orderFlavor");
+        document.getElementById("showContainer").textContent = localStorage.getItem("orderContainer");
+
+        const toppings = JSON.parse(localStorage.getItem("orderToppings")) || [];
+        document.getElementById("showToppings").textContent = toppings.length > 0 
+            ? toppings.join(", ") 
+            : "None";
+
+        document.getElementById("showSpecial").textContent = localStorage.getItem("orderSpecial");
+    </script>
+</body>
+</html>

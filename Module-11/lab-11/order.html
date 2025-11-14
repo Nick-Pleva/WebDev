@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+</head>
+
+<body>
+    <form>
+        <h1>🍦Ice Cream Submission Form🍦</h1>
+
+        <!--Name-->
+        <label for="name">Enter Name For Order<br></label>
+        <input type="text" id="name" name="name" required/>
+        <br><br>
+
+        <!--Flavor-->
+        <label for="flavor">Choose Your Ice Cream Flavor<br></label>
+        <select id="flavor" required>
+             <option value="" selectedS>--Please choose an option--</option>
+             <option value="Chocolate Cherry">Chocolate Cherry</option>
+             <option value="Phish Food">Phish Food</option>
+             <option value="Moose Tracks">Moose Tracks</option>
+        </select>
+
+        <!--Container-->
+        <p>Cup or Cone?</p>
+        <input type="radio" id="Cup" name="container" value="Cup" />
+        <label for="Cup">Cup</label>
+
+        <input type="radio" id="Cone" name="container" value="Cone" />
+        <label for="Cone">Cone</label>
+
+        <!--Toppings-->
+        <p>Select Toppings You Would Like To Add</p>
+        <!-- Add checkbox inputs here -->
+        <input type="checkbox" id="Sprinkles" name="toppings" value="Sprinkles" />
+        <label for="Sprinkles">Sprinkles</label><br>
+
+        <input type="checkbox" id="Caramel" name="toppings" value="Caramel" />
+        <label for="Caramel">Caramel</label><br>
+
+        <input type="checkbox" id="Chocolate Chips" name="toppings" value="Chocolate Chips" />
+        <label for="Chocolate Chips">Chocolate Chips</label><br><br>
+
+        <!--Special Instructions-->
+        <label for="special">(Optional) Any Special Instructions?<br></label>
+        <textarea id="special" name="special" rows="4" cols="30"></textarea>
+
+        <!--Submit-->
+        <br><br><button type="submit">Submit</button>
+    </form>
+
+    <!--Local Storage-->
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault(); // stop regular form submit
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const flavor = document.getElementById("flavor").value;
+        const container = document.querySelector('input[name="container"]:checked')?.value;
+
+        // Get multiple checkboxes
+        const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked'))
+                            .map(item => item.value);
+
+        const special = document.getElementById("special").value;
+
+        // Store in localStorage
+        localStorage.setItem("orderName", name);
+        localStorage.setItem("orderFlavor", flavor);
+        localStorage.setItem("orderContainer", container);
+        localStorage.setItem("orderToppings", JSON.stringify(toppings)); // save array
+        localStorage.setItem("orderSpecial", special);
+
+        // Redirect to confirmation page
+        window.location.href = "confirmation.html";
+    });
+    </script>
+</body>
+</html>
