@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!--1. Valid or Not-->
+    <script>
+        // No   1. { name: "Ali" } 
+        // Yes  2. {"name": "Ali"}
+        // Yes  3. {"age": 45, "isStudent": true}
+        // No   4. {name: "Fatih", sayHi: function() { alert("Hi"); }}
+        // Yes  5. {"grades": [90, 88, 95]}
+    </script>
+
+<!--2. Convert to JSON-->
+    <script>
+        // Javascript
+        const course = { title: "Web Dev", enrolled: 22 };
+
+        //JSON
+        const json = JSON.stringify(course);
+        console.log("Activity 2")
+        console.log(json);
+    </script>
+
+<!--3. Save and Retrieve from localStorage-->
+    <script>
+        const name = prompt("Enter your name:");
+            localStorage.setItem("username", name);
+
+            const saved = localStorage.getItem("username");
+            if (saved) {
+            alert("Welcome back, " + saved + "!");
+            }
+    </script>
+
+<!--4 Parse JSON String-->
+    <script>
+        const jsonString = '{"product": "Laptop", "price": 1200}';
+        const obj = JSON.parse(jsonString);
+        console.log("\nActivity 4")
+        console.log("$" + obj.price);
+    </script>
+
+<!--5. Fetch and Print-->
+    <script>
+        console.log("\nActivity 5")
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res => res.json())
+        .then(users => {
+            for (let i = 0; i < users.length; i++) {
+            console.log(users[i].name + " - " + users[i].address.city);
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+

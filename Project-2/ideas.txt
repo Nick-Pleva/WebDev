@@ -1,0 +1,5 @@
+Make a puzzle game
+- Have multiple pages with different puzzles using different things
+- Puzzle ideas:
+    + Riddle that user needs to input a specific word
+    + Something similar to the wack-a-mole game
