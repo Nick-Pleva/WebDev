@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!--Math Quiz JS-->
+<body style="flex-direction: column;">
+    <div id="app" class="form-container" style="flex-direction: column;"></div>
+    <script src="JS-files/math.js"></script>
+</body>
+
+<!--Give up option, loops back to start-->
+<footer id="footer">
+    <button id="giveUpBtn">Give Up</button>
+    <script>
+    document.getElementById('giveUpBtn').addEventListener('click', () => {
+        window.location.href = 'gaveup.html';
+    });
+    </script>
+</footer>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddle Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <p>Loading riddles...</p>
+    </div>
+
+    <script src="JS-files/riddles.js"></script>
+    <!--Give up option, loops back to start-->
+    <footer id="footer">
+        <button id="giveUpBtn">Give Up</button>
+        <script>
+        document.getElementById('giveUpBtn').addEventListener('click', () => {
+            window.location.href = 'gaveup.html';
+        });
+        </script>
+    </footer>
+</body>
+</html>

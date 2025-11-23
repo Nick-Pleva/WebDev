@@ -1,5 +1,12 @@
 Make a puzzle game
 - Have multiple pages with different puzzles using different things
 - Puzzle ideas:
+    X Math game 
     + Riddle that user needs to input a specific word
     + Something similar to the wack-a-mole game
+        + They have to select all of the boxes with a certain icon
+        + How many yellow fish at 29 seconds
+        https://www.youtube.com/watch?v=IgBqiojSOuA
+        + Then they are asked how many of a different icon there is
+    + JSON file holds the score
+    

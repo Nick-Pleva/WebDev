@@ -1,0 +1,97 @@
+body {
+    background-color: rgb(15, 34, 28);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Flexbox for the container that will hold forms or messages */
+.form-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style for dynamically-created forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+form input {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+button {
+    padding: 10px;
+    background: #3a7bd5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button:hover {
+    background: #2b5ea6;
+}
+
+.start-box {
+    background-color: #1a1a1a;  /* dark background */
+    color: white;               /* text color */
+    padding: 30px;              /* space inside the box */
+    border-radius: 15px;        /* rounded corners */
+    border: 2px solid #3a7bd5; /* optional border color */
+    max-width: 500px;           /* width limit */
+    margin: 50px auto;          /* center horizontally with spacing above */
+    text-align: center;         /* center the text and button */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* subtle shadow */
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#game-container {
+  background: #fff;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+#giveUpBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #f44336; /* red */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#giveUpBtn:hover {
+  background-color: #d32f2f;
+}
