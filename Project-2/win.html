@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Start Screen</title>
+</head>
+<body style="flex-direction: column; align-items: center;">
+    <section class="start-box" style="margin: 0">
+        <h1 style="color: White; text-align: center;">YOU WIN!</h1>
+        <p>You made it to the end of the quiz! Here is your prize!</p>
+        <img src="Media/dr-pepper.JPG" style="margin-bottom:0%; width: 400px;"></img>
+        <button id="startBtn">Click to play again!</button>
+    </section>
+  
+    <footer style="margin: 0">
+        <h5 style="color: white;">Created By: Nick Pleva</h5>
+        <a href="https://nick-pleva.github.io/Profile-Website/" target="_blank" style="color: lightblue !important;">My Website</a>
+    </footer>
+
+    <script>
+    document.getElementById('startBtn').addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+    </script>
+</body>
+</html>

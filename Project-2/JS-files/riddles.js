@@ -85,7 +85,7 @@ function checkAnswer() {
           <button id="finalBtn">On to the final game</button>
         `;
         document.getElementById('finalBtn').addEventListener('click', () => {
-          window.location.href = 'next.html';
+          window.location.href = 'fish.html';
         });
       }
     });
