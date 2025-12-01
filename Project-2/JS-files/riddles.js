@@ -1,16 +1,17 @@
 const container = document.getElementById('game-container');
+const beforeText = document.getElementById('beforeText'); 
 let riddles = [];
 let selectedRiddles = [];
 let currentIndex = 0;
 
-// Success messages per correct answer position
+// Success messages
 const successMessages = [
-  "Good job! First riddle correct!",
-  "Great! Second riddle correct!",
-  "Awesome! Third riddle correct!"
+  "Oh what fun! You guessed one!",
+  "Yahoo! That is two!",
+  "Yippie! You solved all three!"
 ];
 
-// Generic incorrect message
+// Incorrect message
 const incorrectMessage = "Incorrect answer!";
 
 fetch('JSON-files/riddles.json')
@@ -25,6 +26,8 @@ fetch('JSON-files/riddles.json')
   });
 
 function startGame() {
+  beforeText.innerHTML = "Welcome traveler!<br>Before the prize you can see, you must answer my riddles three!";
+
   // Pick 3 random riddles
   selectedRiddles = [];
   const usedIndices = new Set();
@@ -40,6 +43,8 @@ function startGame() {
 }
 
 function showRiddle() {
+  if (currentIndex > 0) beforeText.textContent = "";
+
   const riddle = selectedRiddles[currentIndex];
   container.innerHTML = `
     <p>${riddle.question}</p>
@@ -60,28 +65,43 @@ function showRiddle() {
 function checkAnswer() {
   const inputField = document.getElementById('answerInput');
 
-  if (!inputField.value.trim()) {
-    alert('Please enter an answer!');
+  // Remove intro text only when answering the first riddle
+  if (currentIndex === 0) {
+    beforeText.remove();
+  }
+
+  const answerValue = inputField.value.trim();
+
+  // Validate: at least 3 characters
+  if (answerValue.length < 3) {
+    alert('Answer must be at least 3 characters long!');
     return;
   }
 
-  const userAnswer = inputField.value.trim().toLowerCase();
+  // Validate: no numbers
+  if (/\d/.test(answerValue)) {
+    alert('Answer cannot contain numbers!');
+    return;
+  }
+
+  const userAnswer = answerValue.toLowerCase();
   const correctAnswer = selectedRiddles[currentIndex].answer.trim().toLowerCase();
 
   if (userAnswer === correctAnswer) {
-    // Show generic success message based on order of correct answer
     container.innerHTML = `
       <p>${successMessages[currentIndex]}</p>
       <button id="nextBtn">Next</button>
     `;
+
     document.getElementById('nextBtn').addEventListener('click', () => {
       currentIndex++;
       if (currentIndex < selectedRiddles.length) {
         showRiddle();
       } else {
         // All 3 riddles correct
+        beforeText.textContent = ""; 
         container.innerHTML = `
-          <p>Congratulations! You answered all riddles correctly!</p>
+          <p>I am not surprised!<br>I saw the knowledge of riddles in your eyes!<br>Now continue on to claim your prize!</p>
           <button id="finalBtn">On to the final game</button>
         `;
         document.getElementById('finalBtn').addEventListener('click', () => {
@@ -90,7 +110,7 @@ function checkAnswer() {
       }
     });
   } else {
-    // Show incorrect message and button to game over
+    // Incorrect message
     container.innerHTML = `
       <p>${incorrectMessage}</p>
       <button id="gameoverBtn">Game Over</button>

@@ -13,7 +13,8 @@ if (!gameData) {
 // Functions for each round
 function loadRound1() {
     app.innerHTML = `
-        <h2 style="color: white;">MATH QUIZ: ROUND 1</h2>
+        <h2 style="color: white;">MATH QUIZ</h2>
+        <p class="start-box" style="color: white; text-align: center;">Well well well....<br>You think you are worhty of the great prize....<br>Ill be the judge of that...</p>
         <form id="form1">
             <p>Round 1: Addition & Subtraction</p>
             <label>1 + 1 = </label>
@@ -33,7 +34,7 @@ function loadRound1() {
 
 function loadRound2() {
     app.innerHTML = `
-        <h2 style="color: white;">MATH QUIZ: ROUND 2</h2>
+        <h2 style="color: white;">MATH QUIZ</h2>
         <form id="form2">
             <p>Round 2: Multiplication & Division</p>
             <label>3 × 3 = </label>
@@ -53,7 +54,7 @@ function loadRound2() {
 
 function loadRound3() {
     app.innerHTML = `
-        <h2 style="color: white;">MATH QUIZ: ROUND 3</h2>
+        <h2 style="color: white;">MATH QUIZ</h2>
         <form id="form3">
             <p>Round 3: Mixed Questions</p>
             <label>4 + ((50 - 26) ÷ 6) = </label>
@@ -83,7 +84,7 @@ function checkRound1() {
         return;
     }
 
-    loadContinueScreen(loadRound2, "✅ Great start! Get ready for multiplication & division.", "Continue");
+    loadContinueScreen(loadRound2, "Ok, you can add and subtract....<br>But how about multiplication & division....", "Continue");
 }
 
 function checkRound2() {
@@ -97,7 +98,7 @@ function checkRound2() {
         return;
     }
 
-    loadContinueScreen(loadRound3, "🔥 Nice! Now try the final mixed round.", "Continue");
+    loadContinueScreen(loadRound3, "Alright....<br>You think you are so smart....<br>Try doing it all at once....", "Continue");
 }
 
 function checkRound3() {
@@ -115,15 +116,15 @@ function checkRound3() {
     // Show continue screen for Round 3
     loadContinueScreen(() => {
         window.location.href = "riddles.html";
-    }, "Hmm, I'd say you passed the math challenge.", "On to the next challenge");
+    }, "Hmm....<br>I suppose you might be worthy of th great prize....<br>You have passed my math challenge....", "On to the next challenge");
 }
 
 // Continue Screen
 function loadContinueScreen(next, message, button_text) {
     app.innerHTML = `
-        <div>
+        <div class="start-box">
             <p style="color:white;">${message}</p>
-            <button id="continueBtn">${button_text}</button>
+            <button id="continueBtn" style="align-items: center;">${button_text}</button>
         </div>
     `;
     document.getElementById("continueBtn").onclick = next;
@@ -132,8 +133,8 @@ function loadContinueScreen(next, message, button_text) {
 // Game over
 function gameOver() {
     app.innerHTML = `
-        <div>
-            <p style="color:red;">Incorrect! You lost.</p>
+        <div class="start-box">
+            <p style="color:red;">Just as I thought....<br>You are not worthy of the great prize....<br>You lost.</p>
             <button id="gameOverBtn">Go to Game Over</button>
         </div>
     `;
