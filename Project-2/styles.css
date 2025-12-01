@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(15, 34, 28);
+    background-color: rgb(20, 45, 37);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
@@ -97,4 +97,50 @@ footer {
 
 #giveUpBtn:hover {
   background-color: #d32f2f;
+}
+
+/* Header/logo Title */
+.header {
+    padding-top: 60px;
+    text-align: center;
+    background-image: url('images/main-header.PNG');
+    color: white;
+    font-family: "Courier New", monospace;
+    background-size: cover;
+}
+
+.title_box {
+    display: flex;
+    background-color: rgba(22, 22, 22, 0.8);
+    width: 350px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(22, 22, 22, 0.8);
+    align-items: center;
+    text-align: center;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+    align-items: center;
+    align-content: center;
 }
