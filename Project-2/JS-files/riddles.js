@@ -14,6 +14,7 @@ const successMessages = [
 // Incorrect message
 const incorrectMessage = "Incorrect answer!";
 
+// Get riddles from the JSON file
 fetch('JSON-files/riddles.json')
   .then(response => response.json())
   .then(data => {
@@ -25,6 +26,7 @@ fetch('JSON-files/riddles.json')
     console.error(err);
   });
 
+// Runs to select the riddles we are going to use and begins the game
 function startGame() {
   beforeText.innerHTML = "Welcome traveler!<br>Before the prize you can see, you must answer my riddles three!";
 
@@ -42,6 +44,7 @@ function startGame() {
   showRiddle();
 }
 
+// Displays all of the riddles, one at a time. Also input and submit button
 function showRiddle() {
   if (currentIndex > 0) beforeText.textContent = "";
 
@@ -62,6 +65,7 @@ function showRiddle() {
   });
 }
 
+// Checks the answer that the user gave to make sure it matches the riddle
 function checkAnswer() {
   const inputField = document.getElementById('answerInput');
 
@@ -87,6 +91,7 @@ function checkAnswer() {
   const userAnswer = answerValue.toLowerCase();
   const correctAnswer = selectedRiddles[currentIndex].answer.trim().toLowerCase();
 
+  // If the user is correct then it will bring it to the continue button to move to the next riddle/page
   if (userAnswer === correctAnswer) {
     container.innerHTML = `
       <p>${successMessages[currentIndex]}</p>
@@ -109,6 +114,8 @@ function checkAnswer() {
         });
       }
     });
+  
+  // If the input is wrong then it gives them a continue button that will send them to the game over page
   } else {
     // Incorrect message
     container.innerHTML = `
